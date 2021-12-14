@@ -6,6 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
+dockerpath=nyeve/flaskapp
 
 # Step 2:  
 # Authenticate & tag
@@ -13,3 +14,6 @@ echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
 # Push image to a docker repository
+docker login --username=nyeve 
+docker tag flaskapp $dockerpath:latest
+docker push $dockerpath:latest
